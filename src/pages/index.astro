@@ -1,13 +1,14 @@
 ---
+import Launcher from '../components/Launcher.astro';
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro'; // Importo el componente Header con la primera en mayuscula
+
 ---
 
 <Layout title="SpaceX Launches">
 	<!-- Si hay algun css no lleva classname como remix o react, este utiliza un hash y está chido, i like it -->
 	<!-- Puedo integrar tailwind, es con npx-->
 	<main>
-		<Header/>
+		<Launcher />
 	</main>
 </Layout>
 <!-- Este css solo funciona para este documento, no es global, eso está chido jaja -->

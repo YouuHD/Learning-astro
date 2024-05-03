@@ -4,6 +4,7 @@ interface Props { //Typescript, aquí puedo definir las propiedades que va a rec
 }
 
 const { title } = Astro.props; //Astro es una variable global que tiene todas las propiedades que se le pasan al componente
+import Header from '../components/Header.astro'; // Importo el componente Header con la primera en mayuscula
 ---
 
 <!doctype html>
@@ -17,7 +18,12 @@ const { title } = Astro.props; //Astro es una variable global que tiene todas la
 		<title>{title}</title>
 	</head>
 	<body>
-		<slot />
+		<!-- Aquí puedo poner encabezados, menus, etc. Para eso es el layout -->
+		<Header/>
+		<main class="max-w-5xl px-4 m-auto">
+			<slot />
+		</main>
+		
 	</body>
 </html>
 <!-- Estilos globales -->
@@ -37,6 +43,8 @@ const { title } = Astro.props; //Astro es una variable global que tiene todas la
 		font-family: system-ui, sans-serif;
 		background: #13151a;
 		background-size: 224px;
+		/* Para el modo oscuro jsjsjs */
+		color-scheme: dark light;
 	}
 	code {
 		font-family:
